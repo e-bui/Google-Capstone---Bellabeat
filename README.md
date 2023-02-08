@@ -55,31 +55,24 @@ The data is saved in 18 CSV files
 
 | File Name  | Description | Column Names | Data Details |
 | :------------- | :------------ | :------------ | :------------ |
-| dailyActivity_merged.csv  | Steps Count, Distance in Miles, Active Minutes, Burn Calories | Id, ActivityDate, TotalSteps, TotalDistance, TrackerDistance, LoggedActivitiesDistance, VeryActiveDistance, ModeratelyActiveDistance, LightActiveDistance, SedentaryActiveDistance, VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes, Calories | Long data, 15 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days)|
-| dailyCalories_merged.csv  | Burn Calories | Id, ActivityDay, Calories  |  Long data, 3 columns, 940 rows, period: 4/12/2016 to 5/9/2016 (28 days)   |
-| dailyIntensities_merged.csv | Active Minutes, Active Distance | ActivityDay, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes, SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance | Long data, 10 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days)  |
-| dailySteps_merged.csv | Steps Count | Id, ActivityDate, StepTotal | Long data, 3 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days) |
-| heartrate_seconds_merged.csv  | Heart Rate per second | Id, Time (Date and Time), Value (Heart Rate) | 3 columns, 1048575 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days)  |
-| hourlyCalories_merged.csv  | Burn Calories per Hour | Id, ActivityHour (Date and Time), Calories | 3 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days)  |
-| hourlyIntensities_merged.csv  | Activity Intensity | Id, ActivityHour (Date and Time), TotalIntensity, AverageInternsity | 4 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days)  |
-| hourlySteps_merged.csv  | Hourly Steps | Id, ActivityHour (Date and Time), StepTotal | 3 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days) |
-
-
-| minuteCaloriesNarrow_merged.csv  | Hourly Steps | Id, Time (Date and Time), Value | 3 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/9/2016 (28 days) |
-
-| minuteCaloriesWide_merged.csv  | | Content  |
-| minuteIntensitiesNarrow_merged.csv  | | Content  |
-| minuteIntensitiesWide_merged.csv  | | Content  |
-| minuteMETsNarrow_merged.csv  | | Content  |
-| minuteSleep_merged.csv  | | Content  |
-| minuteStepsNarrow_merged.csv  | | Content  |
-| minuteStepsWide_merged   sv  | | Content  |
-| sleepDay_merged.csv  | | Content  |
-| weightLogInfo_merged.csv  | | Content  |
-
-heartrate_seconds_merged.csv: Tranformation:
-I had the same error. The original CSV file has a timestamp that is not compatible with SQL. The timestamp needs to be in this format: yy-mm-dd hh:mm:ss
-In order to change the format I had to save the CSV file as an excel file then change the format of that column and save it. Then I saved a copy of the corrected spreadsheet as a CSV file. Was able to upload it to BigQuery after that. 
+| dailyActivity_merged.csv  | Steps Count, Distance in Miles, Active Minutes and Burn Calories levels per Day | Id, ActivityDate, TotalSteps, TotalDistance, TrackerDistance, LoggedActivitiesDistance, VeryActiveDistance, ModeratelyActiveDistance, LightActiveDistance, SedentaryActiveDistance, VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes, Calories | 15 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/12/2016 |
+| dailyCalories_merged.csv  | Burn Calories per Day | Id, ActivityDay, Calories  |  3 columns, 940 rows, period: 4/12/2016 to 5/12/2016  |
+| dailyIntensities_merged.csv | Active Minutes and Distance per Day | ActivityDay, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes, SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance | 10 columns, 940 rows, 33 ID, period:4/12/2016 to 5/12/2016   |
+| dailySteps_merged.csv | Steps per Day | Id, ActivityDate, StepTotal | 3 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| heartrate_seconds_merged.csv  | Heart Rate per Second | Id, Time (Date and Time), Value (Heart Rate) | 3 columns, 2483658 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| hourlyCalories_merged.csv  | Burn Calories per Hour | Id, ActivityHour (Date and Time), Calories | 3 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/12/2016   |
+| hourlyIntensities_merged.csv  | Activity Intensity per Hour | Id, ActivityHour (Date and Time), TotalIntensity, AverageInternsity | 4 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| hourlySteps_merged.csv  | Steps per Hour | Id, ActivityHour (Date and Time), StepTotal | 3 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/12/2016 |
+| minuteCaloriesNarrow_merged.csv  | Burn Calories per Minute | Id, ActivityMinute (Date and Time), Calories | 3 columns, 1325580 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| minuteCaloriesWide_merged.csv  |  Burn Calories per Hour | Id, ActivityHour (Date and Time), Calories00, Calories01, Calories02, Calories03, Calories04, Calories05, Calories06, Calories07, Calories08, Calories09, Calories10, Calories11, Calories12, Calories13, Calories14, Calories15, Calories16, Calories17, Calories18, Calories19, Calories20, Calories21, Calories22, Calories23, Calories24, Calories25, Calories26, Calories27, Calories28, Calories29, Calories30, Calories31, Calories32, Calories33, Calories34, Calories35, Calories36, Calories37, Calories38, Calories39, Calories40, Calories41, Calories42, Calories43, Calories44, Calories45, Calories46, Calories47, Calories48, Calories49, Calories50, Calories51, Calories52, Calories53, Calories54, Calories55, Calories56, Calories57, Calories58, Calories59 | 62 columns, 21645 rows, 33 ID, period: 4/12/2016 to 5/12/2016 |
+| minuteIntensitiesNarrow_merged.csv  | Intensity per Minute | Id, ActivityMinute (Date and Time), Intensity | 3 columns, 1325580 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| minuteIntensitiesWide_merged.csv  | Intensity per Hour | Id, ActivityHour (Date and Time), Intensity00, Intensity01, Intensity02, Intensity03, Intensity04, Intensity05, Intensity06, Intensity07, Intensity08, Intensity09, Intensity10, Intensity11, Intensity12, Intensity13, Intensity14, Intensity15, Intensity16, Intensity17, Intensity18, Intensity19, Intensity20, Intensity21, Intensity22, Intensity23, Intensity24, Intensity25, Intensity26, Intensity27, Intensity28, Intensity29, Intensity30, Intensity31, Intensity32, Intensity33, Intensity34, Intensity35, Intensity36, Intensity37, Intensity38, Intensity39, Intensity40, Intensity41, Intensity42, Intensity43, Intensity44, Intensity45, Intensity46, Intensity47, Intensity48, Intensity49, Intensity50, Intensity51, Intensity52, Intensity53, Intensity54, Intensity55, Intensity56, Intensity57, Intensity58, Intensity59 | 62 columns, 21645 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| minuteMETsNarrow_merged.csv  |  METs per Minute *(Metabolic Equivalent of Task)* | Id, ActivityMinute (Date and Time), METs | 3 columns, 1325580 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| minuteSleep_merged.csv  | Sleep per Minute | Id, date (Date and Time), value, logId | 4 columns, 188521 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| minuteStepsNarrow_merged.csv | Steps per Minute | Id, ActivityMinute (Date and Time), Steps | 3 columns, 1325580 rows, 33 ID, period: 4/12/2016 to 5/12/2016 |
+| minuteStepsWide_merged.csv | Steps per Hour | Id, ActivityHour (Date and Time), Steps00, Steps01, Steps02, Steps03, Steps04, Steps05, Steps06, Steps07, Steps08, Steps09, Steps10, Steps11, Steps12, Steps13, Steps14, Steps15, Steps16, Steps17, Steps18, Steps19, Steps20, Steps21, Steps22, Steps23, Steps24, Steps25, Steps26, Steps27, Steps28, Steps29, Steps30, Steps31, Steps32, Steps33, Steps34, Steps35, Steps36, Steps37, Steps38, Steps39, Steps40, Steps41, Steps42, Steps43, Steps44, Steps45, Steps46, Steps47, Steps48, Steps49, Steps50, Steps51, Steps52, Steps53, Steps54, Steps55, Steps56, Steps57, Steps58, Steps59 | 62 columns, 21645 rows, 33 ID, period: 4/12/2016 to 5/12/2016 |
+| sleepDay_merged.csv  | Sleep per Day | Id, SleepDay, TotalSleepRecords, TotalMinutesAsleep, TotalTimeInBed | 5 columns, 413 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| weightLogInfo_merged.csv  | Weight | Id, Date, WeightKg, WeightPounds, Fat, BMI, IsManualReport (Bolean), LogId | 8 columns, 67 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
 
 
 #### Data Organization

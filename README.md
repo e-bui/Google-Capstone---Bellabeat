@@ -56,7 +56,7 @@ The available data is saved in 18 CSV files:
 | dailyActivity_merged.csv  | Steps Count, Distance in Miles, Active Minutes and Burn Calories levels per Day | Id, ActivityDate, TotalSteps, TotalDistance, TrackerDistance, LoggedActivitiesDistance, VeryActiveDistance, ModeratelyActiveDistance, LightActiveDistance, SedentaryActiveDistance, VeryActiveMinutes, FairlyActiveMinutes, LightlyActiveMinutes, SedentaryMinutes, Calories | 15 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/12/2016 |
 | dailyCalories_merged.csv  | Burn Calories per Day | Id, ActivityDay, Calories  |  3 columns, 940 rows, period: 4/12/2016 to 5/12/2016  |
 | dailyIntensities_merged.csv | Active Minutes and Distance per Day | ActivityDay, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes, SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance | 10 columns, 940 rows, 33 ID, period:4/12/2016 to 5/12/2016   |
-| dailySteps_merged.csv | Steps per Day | Id, ActivityDate, StepTotal | 3 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
+| dailySteps_merged.csv | Steps per Day | Id, ActivityDay, StepTotal | 3 columns, 940 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
 | heartrate_seconds_merged.csv  | Heart Rate per Second | Id, Time (Date and Time), Value (Heart Rate) | 3 columns, 2483658 rows, 14 ID, period: 4/12/2016 to 5/12/2016  |
 | hourlyCalories_merged.csv  | Burn Calories per Hour | Id, ActivityHour (Date and Time), Calories | 3 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/12/2016   |
 | hourlyIntensities_merged.csv  | Activity Intensity per Hour | Id, ActivityHour (Date and Time), TotalIntensity, AverageInternsity | 4 columns, 22099 rows, 33 ID, period: 4/12/2016 to 5/12/2016  |
@@ -101,7 +101,9 @@ Data range check
 No null data
 No duplicates
 
-**sample of code**
+```{r} Daily_Activity <- read_csv("Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv") ```
+
+
 
 
 ## **PROCESS Phase**

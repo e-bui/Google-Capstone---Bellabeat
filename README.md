@@ -83,18 +83,24 @@ We are allowed to copy, modify, distribute and perform the work, even for commer
 
 There will be limitations to the reliability of the analysis due to the sample size (33 users) and the short time period (2 months) which could create biased results. 
 Moreover, the four files below will be excluded by default from the analysis because their sample size is too small compared to the other files (less than 33 Id):
-- heartrate_seconds_merged.csv
-- minuteSleep_merged.csv
-- sleepDay_merged.csv
-- weightLogInfo_merged.csv
+- heartrate_seconds_merged.csv (14 users)
+- weightLogInfo_merged.csv (8 users)
 
 #### Data Integrity
 
 Some files were too big to be opened in spreadsheets and display all the datasets, thus the data has been verified in R Cloud.
 
+The files provide information in days, hours and minutes. We'll focus our analysis on the daily basis. Although "sleepDay_merged.csv" file has collected data for only 24 users 9 vs. 33 total users), we'll exceptionnally keep this file in the analysis 
+
+## **PROCESS Phase**
+
+R Studio has been choosen to process this analysis as it allows the user to perform all the phases in one tool (Preparation, Process, Analysis, Share).
+amount of data.
+
+
 The data sets will require some data cleaning to facilitate the analysis: 
 
-This is an example of the reproducible code for the data verification based on *dailyActivity_merged.csv* file:
+This is an example of the reproducible code for the data verification based on *dailyActivity_merged.csv* file 
 
 Id check
 Data range check
@@ -103,12 +109,6 @@ No duplicates
 
 ```{r} Daily_Activity <- read_csv("Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv") ```
 
-
-
-
-## **PROCESS Phase**
-
-R Studio has been choosen to process this analysis as it allows the user to perform all the phases in one tool (Preparation, Process, Analysis, Share).
 
 Reformat the dates
 
